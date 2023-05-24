@@ -30,11 +30,11 @@ void FillArray(int[,] arr) // Заполнение массива
         {   
             //Можно сделать заполнение случайными числами, 
             //для этого строку ниже раcкоментить, остальное закоментировать
-            arr[i, j] = new Random().Next(0,10);
-            // Console.Write($"Введите значение для элемента {count}: ");
-            // count++;
-            // int temp = Convert.ToInt32(Console.ReadLine());
-            // arr[i,j] = temp;
+            //arr[i, j] = new Random().Next(0,10);
+            Console.Write($"Введите значение для элемента {count}: ");
+            count++;
+            int temp = Convert.ToInt32(Console.ReadLine());
+            arr[i,j] = temp;
         }
     }
 }
@@ -66,7 +66,7 @@ int[,] MultiplyArrays(int[,] arr1, int[,] arr2) // Перемножение ма
 }
 
 int [,] arr1 = CreateArray("Введите количество линий для массива: ", "Введите количество столбцов для массива: ");
-int [,] arr2 = new int[arr1.GetLength(0), arr1.GetLength(1)];
+int [,] arr2 = new int[arr1.GetLength(0), arr1.GetLength(1)]; //Создание второго массива по размерам, заданным для первого
 
 FillArray(arr1);
 FillArray(arr2);

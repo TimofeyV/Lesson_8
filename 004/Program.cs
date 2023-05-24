@@ -12,30 +12,23 @@ int[,,] CreateArray(string message1, string message2, string message3) // Соз
     int x = Convert.ToInt32(Console.ReadLine());
     Console.Write(message2);
     int y = Convert.ToInt32(Console.ReadLine());
-    Console.Write(message2);
+    Console.Write(message3);
     int z = Convert.ToInt32(Console.ReadLine());
     int[,,] arr = new int[x, y, z];
     return arr;
 }
 
-void FillArray(int[,,] array3D)
+void FillArray(int[,,] array3D) //Заполнение массива уникальными двузначными числами
 {
     int[] array = new int [array3D.GetLength(0) * array3D.GetLength(1) * array3D.GetLength(2)];
-    int border = array.Length;
 
-    for (int i = 0; i < border; i++)//Создание массива с уникальными числами
+    for (int i = 0; i < array.Length; i++)//Создание одномерного массива с уникальными числами
     {
         int temp = new Random().Next(10,100);
-        if (array.Contains(temp)) 
-        {
-            i--;
-        }
-        else 
-        {
-            array[i] = temp;
-        }    
-    }
 
+        if (array.Contains(temp)) i--;
+        else array[i] = temp;  
+    }
 
     int count = 0;
     for (int x = 0; x < 2; x++)//Из массива, созданного выше, записываю числа в трёхмерный массив
@@ -63,9 +56,9 @@ void PrintArray(int[,,] arr) // Вывод массива в терминал
             }
             Console.WriteLine();
         }
-    }         
-        
+    }             
 }
+
 int [,,] array3D = CreateArray("Введите X: ", "Введите Y: ", "Введите Z: ");
 FillArray(array3D);
 PrintArray(array3D);

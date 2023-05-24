@@ -19,18 +19,18 @@ int[,] CreateArray(string message1, string message2) // Создание мас�
 
 void FillArray(int[,] arr) // Заполнение массива
 {
-    //int count = 1;
+    int count = 1;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {   
             //Можно сделать заполнение случайными числами, 
             //для этого строку ниже раcкоментить, остальное закоментировать
-            arr[i, j] = new Random().Next(0,10);
-            // Console.Write($"Введите значение для элемента {count}: ");
-            // count++;
-            // int temp = Convert.ToInt32(Console.ReadLine());
-            // arr[i,j] = temp;
+            // arr[i, j] = new Random().Next(0,10);
+            Console.Write($"Введите значение для элемента {count}: ");
+            count++;
+            int temp = Convert.ToInt32(Console.ReadLine());
+            arr[i,j] = temp;
         }
     }
 }

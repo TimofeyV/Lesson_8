@@ -19,13 +19,18 @@ void PrintArray(int[,] arr) // Вывод массива в терминал
     }
 }
 
-for (int i = 0, j = 0 ,temp = 1 ;temp < 16; temp++)
+void SpiralArr(int[,] arr) //Вывод массива по спирали
 {
-    array[i, j] = temp;
-    if  (i <= j + 1 && i + j < array.GetLength(1) - 1) j++;
-    else if (i < j && i + j >= array.GetLength(0) - 1) i++;
-    else if (i >= j && i + j > array.GetLength(1) - 1) j--;
-    else i--;
+    for (int i = 0, j = 0, temp = 1; temp < 16; temp++)
+    {
+        array[i, j] = temp;
+        if  (i <= j + 1 && i + j < array.GetLength(1) - 1) j++;
+        else if (i < j && i + j >= array.GetLength(0) - 1) i++;
+        else if (i >= j && i + j > array.GetLength(1) - 1) j--;
+        else i--;
+    }
 }
 
+
+SpiralArr(array);
 PrintArray(array);
